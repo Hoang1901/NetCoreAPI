@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MvcMovie.Models;
 
 namespace Demo.Cotroller;
 public class DemoController : Controller
@@ -9,9 +10,9 @@ public class DemoController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Index(string Fullname)
+    public IActionResult Index(string Fullname, string PersonID, string Address)
     {
-        string strResult = "Xin chao " +Fullname;
+        string strResult = "Xin chao" + PersonID + "-" + Fullname + "-" + Address;
         ViewBag.info = strResult;
         return View();
     }
