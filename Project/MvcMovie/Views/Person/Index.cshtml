@@ -1,8 +1,8 @@
 @model IEnumerable<MvcMovie.Models.Person>
 
-@* @{
+@{
     ViewData["Title"] = "Index";
-} *@
+}
 
 <h1>Index</h1>
 
@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+@foreach (var item in Model)
         {
             <tr>
                 <td>
@@ -32,8 +32,8 @@
                     @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-all-route-id="@item.PersonID">Edit</a>
-                    <a asp-action="Delete" asp-all-route-id="@item.PersonID">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.PersonID">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.PersonID">Delete</a>
                 </td>
             </tr>
         }        
