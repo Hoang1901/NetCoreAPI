@@ -3,9 +3,9 @@ using MvcMovie.Models;
 
 namespace MvcMovie.Data
 {
-    public class ApplicationDbcontext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbcontext(DbContextOptions<ApplicationDbcontext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
         // Khai báo ánh xạ vào trong DataBase
         public DbSet<Person> Person {get; set;}

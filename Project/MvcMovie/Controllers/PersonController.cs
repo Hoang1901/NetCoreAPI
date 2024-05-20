@@ -4,15 +4,21 @@ using MvcMovie.Data;
 using MvcMovie.Models;
 using MvcMovie.Models.Process;
 using OfficeOpenXml;
+using X.PagedList;
 
 namespace MvcMovie.PersonController
 {
     public class PersonController : Controller
     {
         // khai báo ApplicationDbContext để làm việc với CSDL
-        private readonly ApplicationDbcontext _context;
+        private readonly ApplicationDbContext _context;
         private ExcelProcess _excelProcess = new ExcelProcess();
-        public PersonController(ApplicationDbcontext context)
+        public async Task<IActionResult> Index(int? page)
+        {
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, 5);
+            return View(model);
+        }
+        public PersonController(ApplicationDbContext context)
         {
             _context = context;
         }
