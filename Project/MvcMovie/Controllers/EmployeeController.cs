@@ -7,8 +7,8 @@ namespace MvcMovie.EmployeeController
 {
     public class EmployeeController : Controller
     {
-        private readonly ApplicationDbcontext _context;
-        public EmployeeController(ApplicationDbcontext context)
+        private readonly ApplicationDbContext _context;
+        public EmployeeController(ApplicationDbContext context)
         {
             _context = context;
         }

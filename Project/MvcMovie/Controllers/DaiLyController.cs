@@ -7,8 +7,8 @@ namespace MvcMovie.EmployeeController
 {
     public class DaiLyController : Controller
     {
-        private readonly ApplicationDbcontext _context;
-        public DaiLyController(ApplicationDbcontext context)
+        private readonly ApplicationDbContext _context;
+        public DaiLyController(ApplicationDbContext context)
         {
             _context = context;
         }

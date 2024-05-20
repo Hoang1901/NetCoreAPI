@@ -2,14 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcMovie.Data;
 
 #nullable disable
 
 namespace MvcMovie.Migrations
 {
-    [DbContext(typeof(ApplicationDbcontext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240514173042_Create_table_Persons")]
     partial class Create_table_Persons
     {

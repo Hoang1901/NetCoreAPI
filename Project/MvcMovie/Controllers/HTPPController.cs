@@ -7,8 +7,8 @@ namespace MvcMovie.HTPPController
 {
     public class HTPPController : Controller
     {
-        private readonly ApplicationDbcontext _context;
-        public HTPPController(ApplicationDbcontext context)
+        private readonly ApplicationDbContext _context;
+        public HTPPController(ApplicationDbContext context)
         {
             _context = context;
         }
