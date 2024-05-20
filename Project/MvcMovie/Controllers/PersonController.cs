@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
 using MvcMovie.Models.Process;
+using OfficeOpenXml;
 
 namespace MvcMovie.PersonController
 {
@@ -171,6 +172,27 @@ namespace MvcMovie.PersonController
                 }
             }
             return View();
+        }
+
+        public ActionResult Download()
+        {
+            //name the file when downloading
+            var fileName = "YourFileName" + ".xlsx";
+            using(ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                //add some text to cell A1
+                worksheet.Cells["A1"].Value = "PersonID";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+                //Get all Person
+                var personList = _context.Person.ToList();
+                //fill data to worksheet
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                //download file
+                return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);       
+            }
         }
 
     }
