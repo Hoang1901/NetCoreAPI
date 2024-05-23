@@ -41,45 +41,49 @@ namespace MvcMovie.PersonController
         }
         
         //tao action Edit
-        // public async Task<IActionResult> Edit(string id)
-        // {
-        //     if (id == null || _context.Person == null)
-        //     {
-        //         return NotFound();
-        //     }
-            
-        //     var person = await _context.Person.FindAsync(id);
-        //     if (person == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     return View(person);
-        // }
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
-        // {
-        //     if (id != person.PersonId)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     if (ModelState.IsValid)
-        //     {
-        //         try 
-        //         {
-        //             _context.Update(person);
-        //             await _context.SaveChangesAsync();
-        //         }
-        //         catch (DbUpdateConcurrencyException)
-        //         {
-        //             if (!PersonExists(person.PersonId))
-        //             {
-        //                 return NotFound();
-        //             }
-        //         }
-        //     }
-        // }
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null || _context.Person == null)
+            {
+                return NotFound();
+            }
+            var person = await _context.Person.FindAsync(id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+            return View(person);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
+        {
+            if (id != person.PersonId)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(person);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PersonExists(person.PersonId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(person);
+        }
 
         //tao action Delete
         public async Task<IActionResult> Delete(string id)
@@ -159,7 +163,6 @@ namespace MvcMovie.PersonController
                     }
                 }
             }
-
             return View();
         }
 

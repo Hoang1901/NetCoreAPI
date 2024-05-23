@@ -1,6 +1,5 @@
 using System.Data;
 using OfficeOpenXml;
-
 namespace MvcMovie.Models.Process
 {
     public class ExcelProcess
