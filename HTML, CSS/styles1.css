@@ -242,3 +242,33 @@ ol.d {
     background-color: #04AA6D;
     color: white;
 }
+table, td, th {
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    height: 70px;
+}
+td {
+    text-align: center;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+li {
+    display: inline;
+}
