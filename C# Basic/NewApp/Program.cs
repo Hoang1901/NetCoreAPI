@@ -20,5 +20,7 @@ public class Program
         System.Console.WriteLine("{0} * {1} = {2}", a, b, a*b);
         System.Console.WriteLine("{0} / {1} = {2}", a, b, a/b);
         System.Console.WriteLine("{0} % {1} = {2}", a, b, a%b);
+        //toan tu so sanh
+        System.Console.WriteLine("{0} > {1} = {2}", a, b, a>b);
     }
 }
