@@ -1,14 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
-        string str = "123";  //gia tri dau vao can chuyen doi
-        //chuyen doi kieu du lieu string (gia tri = '123')
-        //sang kieu du lieu int (gia tri sau vhuye doi = 123)
-        int a = Convert.ToInt32(str);
-        System.Console.WriteLine("a = " + a);
+        int a, b; //khai bao 2 bien so a va b kieu int
+        // thong bao cho nguoi dung nhap vao a
+        System.Console.Write("a = ");
+        //doc du lieu nhap tu ban phim chuyen sang kieu int va gan cho a
+        a = Convert.ToInt32(Console.ReadLine());
+        System.Console.Write("b = ");
+        b = Convert.ToInt32(Console.ReadLine());
+        //in tong a+b ra ngoai man hinh
+        System.Console.WriteLine("{0} + {1} = {2}", a, b, a+b);
     }
 }
