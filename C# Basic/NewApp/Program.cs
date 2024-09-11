@@ -14,5 +14,11 @@ public class Program
         b = Convert.ToInt32(Console.ReadLine());
         //in tong a+b ra ngoai man hinh
         System.Console.WriteLine("{0} + {1} = {2}", a, b, a+b);
+        //in hieu a-b ra ngoai man hinh
+        System.Console.WriteLine("{0} - {1} = {2}", a, b, a-b);
+        //in tich a*b ra ngoai man hinh
+        System.Console.WriteLine("{0} * {1} = {2}", a, b, a*b);
+        System.Console.WriteLine("{0} / {1} = {2}", a, b, a/b);
+        System.Console.WriteLine("{0} % {1} = {2}", a, b, a%b);
     }
 }
