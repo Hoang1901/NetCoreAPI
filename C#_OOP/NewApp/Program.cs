@@ -3,27 +3,14 @@ public class Program()
 {
     private static void Main(string[] args)
     {
-        //khoi tao 2 doi tuong tu class Person
-        Person ps1 = new Person
-        {
-            //gan gia tri cho thuoc tinh doi tuong ps1
-            FullName = "Nguyen Van A",
-            Address = "Ha Noi",
-            Age = 18
-        };
-        
-        Person ps2 = new Person
-        {
-            //gan gia tri cho thuoc tinh doi tuong ps2
-            FullName = "Nguyen Van B",
-            Address = "Hai Duong",
-            Age = 22
-        };
+        //khoi tao doi tuong ps tu class Person
+        Person ps = new Person();
+        //khai bao 2 bien va gan gia tri
+        string str = "Nguyen Van A";
+        int a = 22;
     
-        //goi phuong thuc hien thi thong tin
-        ps1.Display();
-        ps2.Display();
-
-        //
+        //goi phuong thuc va truyen vao tham so
+        ps.Display2(str, a);
     }
+
 }
