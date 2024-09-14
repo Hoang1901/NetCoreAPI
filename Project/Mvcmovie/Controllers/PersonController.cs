@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Encodings.Web;
+using MvcMovie.Models;
+
 namespace MvcMovie.Controllers
 {
     public class PersonController : Controller
@@ -7,7 +8,15 @@ namespace MvcMovie.Controllers
         public IActionResult PersonIndex()
         {
             return View();
-        } 
+        }
+
+        [HttpPost]
+        public IActionResult PersonIndex(Person ps)
+        {
+            string strOutput = "Xin chao " + ps.PersonId + " - " + ps.FullName + " - " + ps.Address;
+            ViewBag.infoPerson = strOutput;
+            return View();
+        }
         
     }
 }

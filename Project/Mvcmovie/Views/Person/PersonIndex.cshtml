@@ -1,7 +1,10 @@
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h2>Index</h2>
-
-<p>This is Person web!</p>
+<h1>Du lieu tu Controller gui ve la: @ViewBag.infoPerson</h1>
+<form asp-action="PersonIndex">
+    <label>Nhap PersonID</label>
+    <input type="text" name="PersonId">
+    <label>Nhap ho ten</label>
+    <input type="text" name="FullName">
+    <label>Nhap dia chi</label>
+    <input type="text" name="Address">
+    <input type="submit" name="send">
+</form>
