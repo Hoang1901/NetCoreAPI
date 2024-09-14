@@ -8,9 +8,7 @@ public class Program()
         //khai bao 2 bien va gan gia tri
         string str = "Nguyen Van A";
         int a = 22;
-    
-        //goi phuong thuc va truyen vao tham so
-        ps.Display2(str, a);
+        Console.WriteLine("{0} sinh nam {1}", str, ps.GetYearOfBirth(a));
     }
 
 }
