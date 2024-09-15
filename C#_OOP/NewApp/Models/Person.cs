@@ -8,27 +8,17 @@ namespace NewApp.Models
 
         public void EnterData()
         {
-            System.Console.WriteLine("Full name = ");
-            string? FullName = Console.ReadLine();
-            System.Console.WriteLine("Address = ");
-            string? Address = Console.ReadLine();
-            System.Console.WriteLine("Age =");
+            System.Console.Write("Full name = ");
+            FullName = Console.ReadLine();
+            System.Console.Write("Address = ");
+            Address = Console.ReadLine();
+            System.Console.Write("Age = ");
             Age = Convert.ToInt32(Console.ReadLine());
         }
 
         public void Display()
         {
-            System.Console.WriteLine("{0} - {1} - {2} tuoi", FullName, Address, Age);
-        }
-
-        public void Display(string ten, int tuoi)
-        {
-            System.Console.WriteLine("Sinh vien {0} - {1} tuoi", ten, tuoi);
-        }
-
-        public void Display(string ten, string diaChi)
-        {
-            System.Console.WriteLine("Sinh vien {0} - {1}", ten, diaChi);
+            System.Console.Write("{0} - {1} - {2} tuoi", FullName, Address, Age);
         }
 
         public void Display2 (string ten, int tuoi )

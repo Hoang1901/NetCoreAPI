@@ -1,27 +1,25 @@
 namespace NewApp.Models
 {
-    public class Student
+    public class Student : Person
     {
-        public int MaHS { get; set; }
-        public required string TenHS { get; set;}
-        public required string DiaChi { get; set;}
-        public required string Lop { get; set;}
+        public string? StudentCode { get; set; }
+        public string? Lop { get; set; }
 
-        public void Nhap()
+        public void EnterData()
         {
-            System.Console.WriteLine("Ma hoc sinh: ");
-            MaHS = Convert.ToInt32(System.Console.ReadLine());
-            System.Console.WriteLine("Ten hoc sinh: ");
-            string? TenHS = Console.ReadLine();
-            System.Console.WriteLine("Dia chi: ");
-            string? DiaChi = Console.ReadLine();
-            System.Console.WriteLine("Lop: ");
+            //ke thua phuong thuc
+            base.EnterData();
+            //phat trien them
+            System.Console.Write("Ma hoc sinh: ");
+            StudentCode =  Console.ReadLine();
+            System.Console.Write("Lop: ");
             string? Lop = Console.ReadLine();
         }
 
-        public void Xuat()
+        public void Display()
         {
-            System.Console.WriteLine("{0} - {1} - Lop {2}", MaHS, TenHS, Lop);
+            base.Display();
+            System.Console.Write(" - Ma sinh vien - Lop {1}", StudentCode, Lop);
         }
     }
 }
