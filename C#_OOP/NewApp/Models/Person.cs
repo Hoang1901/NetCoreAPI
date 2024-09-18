@@ -14,6 +14,14 @@ namespace NewApp.Models
             Address = Console.ReadLine();
             System.Console.Write("Age = ");
             Age = Convert.ToInt32(Console.ReadLine());
+            try{
+                //cau lenh co the gay ngoai le
+                Age = Convert.ToInt16(Console.ReadLine());
+            }catch(Exception e)
+            {
+                //lenh xu ly ngoai le
+                Age = 0;
+            }
         }
 
         public void Display()
