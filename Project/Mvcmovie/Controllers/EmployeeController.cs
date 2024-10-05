@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
@@ -29,7 +34,7 @@ namespace Mvcmovie.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -49,7 +54,7 @@ namespace Mvcmovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,Age,PersonId,FullName,Address")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeId,company,PersonID,HoTen,QueQuan")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -81,9 +86,9 @@ namespace Mvcmovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,Age,PersonId,FullName,Address")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,company,PersonID,HoTen,QueQuan")] Employee employee)
         {
-            if (id != employee.PersonId)
+            if (id != employee.PersonID)
             {
                 return NotFound();
             }
@@ -97,7 +102,7 @@ namespace Mvcmovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.PersonId))
+                    if (!EmployeeExists(employee.PersonID))
                     {
                         return NotFound();
                     }
@@ -120,7 +125,7 @@ namespace Mvcmovie.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -146,7 +151,7 @@ namespace Mvcmovie.Controllers
 
         private bool EmployeeExists(string id)
         {
-            return _context.Employee.Any(e => e.PersonId == id);
+            return _context.Employee.Any(e => e.PersonID == id);
         }
     }
 }

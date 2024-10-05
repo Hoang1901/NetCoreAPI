@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
@@ -17,8 +22,7 @@ namespace Mvcmovie.Controllers
         // GET: Person
         public async Task<IActionResult> Index()
         {
-            var model = await _context.Person.ToListAsync();
-            return View(model);
+            return View(await _context.Person.ToListAsync());
         }
 
         // GET: Person/Details/5
@@ -30,7 +34,7 @@ namespace Mvcmovie.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (person == null)
             {
                 return NotFound();
@@ -50,7 +54,7 @@ namespace Mvcmovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonID,HoTen,QueQuan")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -82,9 +86,9 @@ namespace Mvcmovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonID,HoTen,QueQuan")] Person person)
         {
-            if (id != person.PersonId)
+            if (id != person.PersonID)
             {
                 return NotFound();
             }
@@ -98,7 +102,7 @@ namespace Mvcmovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonId))
+                    if (!PersonExists(person.PersonID))
                     {
                         return NotFound();
                     }
@@ -121,7 +125,7 @@ namespace Mvcmovie.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (person == null)
             {
                 return NotFound();
@@ -147,7 +151,7 @@ namespace Mvcmovie.Controllers
 
         private bool PersonExists(string id)
         {
-            return _context.Person.Any(e => e.PersonId == id);
+            return _context.Person.Any(e => e.PersonID == id);
         }
     }
 }

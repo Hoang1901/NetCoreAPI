@@ -1,14 +1,9 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace MvcMovie.Models
 {
-    [Table("Persons")]
     public class Person
     {
-    [Key]
-    public required string PersonId { get; set; }
-    public required string FullName { get; set; }
-    public required string Address { get; set;}
+        public string PersonID { get; set; }
+        public string HoTen { get; set; }
+        public string QueQuan { get; set; }
     }
 }
