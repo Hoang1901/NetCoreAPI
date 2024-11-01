@@ -20,9 +20,19 @@ namespace Mvcmovie.Controllers
         }
 
         // GET: Employee
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
-            return View(await _context.Employee.ToListAsync());
+            var hoten = from m in _context.Employee select m;
+            if (!string.IsNullOrEmpty(id))
+                {
+                    hoten = hoten.Where(s => s.HoTen.Contains(id));
+                }
+            return View(await hoten.ToListAsync());
+        }
+        [HttpPost]
+        public string Index(string id, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + id;
         }
 
         // GET: Employee/Details/5
