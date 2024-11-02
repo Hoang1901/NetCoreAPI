@@ -10,8 +10,8 @@ using MvcMovie.Data;
 namespace Mvcmovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241005063905_Create_Table_Person")]
-    partial class Create_Table_Person
+    [Migration("20241102070155_Create_table_Person")]
+    partial class Create_table_Person
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,6 @@ namespace Mvcmovie.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("QueQuan")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonID");
@@ -55,7 +54,6 @@ namespace Mvcmovie.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("company")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasDiscriminator().HasValue("Employee");

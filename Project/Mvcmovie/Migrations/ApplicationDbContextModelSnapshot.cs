@@ -31,7 +31,6 @@ namespace Mvcmovie.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("QueQuan")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonID");
@@ -52,7 +51,6 @@ namespace Mvcmovie.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("company")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasDiscriminator().HasValue("Employee");

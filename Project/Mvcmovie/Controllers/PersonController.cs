@@ -1,18 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
+using MvcMovie.Models.Process;
 
 namespace Mvcmovie.Controllers
 {
     public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private ExcelProcess _excelProcess = new ExcelProcess();
 
         public PersonController(ApplicationDbContext context)
         {
@@ -165,6 +162,53 @@ namespace Mvcmovie.Controllers
         private bool PersonExists(string id)
         {
             return _context.Person.Any(e => e.PersonID == id);
+        }
+
+        public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file != null)
+            {
+                string fileExtentions = Path.GetExtension(file.FileName);
+                if (fileExtentions != ".xls" && fileExtentions != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose excel file to upload!");
+                }
+                else
+                {
+                    //rename file while upload to sever
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtentions;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        //save file to sever
+                        await file.CopyToAsync(stream);
+                        //read data from excel file fill DataTable
+                        var dt = _excelProcess.ExcelToDataTable(fileLocation);
+                        //using for loop to read data from dt
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            //create new Person object
+                            var ps = new Person();
+                            //set value to attributes
+                            ps.PersonID = dt.Rows[i][0].ToString();
+                            ps.HoTen = dt.Rows[i][1].ToString();
+                            ps.QueQuan = dt.Rows[i][2].ToString();
+                            //add object to context
+                            _context.Person.Add(ps);
+                        }
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            return View();
         }
     }
 }
