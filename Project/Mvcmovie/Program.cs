@@ -1,8 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
+using Microsoft.AspNetCore.Identity;
+using MvcMovieIdentity.Data;
+using MvcMovie.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+builder.Services.AddDbContext<MvcMovie.Data.ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<MvcMovieIdentity.Data.ApplicationDbContext>();
 
 
 // Add services to the container.
