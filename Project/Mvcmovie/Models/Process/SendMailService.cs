@@ -13,7 +13,7 @@ namespace MvcMovie.Models.Process
         public SendMailService(IOptions<MailSettings> _mailSettings, ILogger<SendMailService> _logger)
         {
             mailSettings = _mailSettings.Value;
-            logger = _logger;
+            logger = _logger;   
             logger.LogInformation("Create SendMailService");
         }
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
