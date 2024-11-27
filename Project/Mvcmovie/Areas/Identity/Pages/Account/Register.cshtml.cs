@@ -76,7 +76,7 @@ namespace Mvcmovie.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [EmailAddress]
+            // [EmailAddress]
             [Display(Name = "Full name")]
             public string FullName { get; set; }
 
