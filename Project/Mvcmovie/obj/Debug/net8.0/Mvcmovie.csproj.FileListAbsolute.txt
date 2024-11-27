@@ -291,7 +291,6 @@ D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
@@ -300,3 +299,6 @@ D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Options.d
 D:\Net_Core_API\Project\Mvcmovie\obj\Debug\net8.0\Mvcmovie.MvcApplicationPartsAssemblyInfo.cs
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\X.PagedList.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\MailKit.dll
+D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\MimeKit.dll

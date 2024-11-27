@@ -2,19 +2,25 @@ using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using Microsoft.AspNetCore.Identity;
 using MvcMovie.Models;
-using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.DataProtection;
-
+using MvcMovie.Models.Process;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddOptions();
+        var mailSettings = builder.Configuration.GetSection("MailSettings");
+        builder.Services.Configure<MailSettings>(mailSettings);
+        builder.Services.AddTransient<IEmailSender, SendMailService>();
+
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.Configure<IdentityOptions>(options => 
 {
     //default Lockout setting
@@ -71,6 +77,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.MapRazorPages();
+
 
 app.UseRouting();
 app.UseAuthentication();
