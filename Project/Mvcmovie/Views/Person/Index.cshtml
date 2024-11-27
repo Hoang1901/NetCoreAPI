@@ -58,15 +58,15 @@
                 new X.PagedList.Mvc.Core.PagedListRenderOptions { LiElementClasses = new string[] {"page-item"}, 
                 PageClasses = new string[] { "page-link" }})
         </div>
-        <div>
+        <div class="col-md-1">
             @Html.DropDownList("pageSize", null, new {@class = "form-select"})
         </div>
     </div>    
 }
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script>
-    $document.ready(function () {
-        $("#pageSize").change(function () {
+    $document.ready(function() {
+        $("#pageSize").change(function() {
             $("#form1").submit();
         });
     });
