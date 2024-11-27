@@ -4,6 +4,7 @@ using MvcMovie.Data;
 using MvcMovie.Models;
 using MvcMovie.Models.Process;
 using OfficeOpenXml;
+using X.PagedList.Extensions;
 
 namespace Mvcmovie.Controllers
 {
@@ -18,22 +19,10 @@ namespace Mvcmovie.Controllers
         }
 
         // GET: Person
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(int? page)
         {
-            if (_context.Model == null)
-            {
-                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
-            }
-
-            var person = from p in _context.Person
-                        select p;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                person = person.Where(s => s.HoTen.ToUpper().Contains(searchString.ToUpper()));
-            }
-
-            return View(await person.ToListAsync());
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, 5);
+            return View(model);
         }
 
         // GET: Person/Details/5

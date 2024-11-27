@@ -298,3 +298,5 @@ D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Logging.d
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\Net_Core_API\Project\Mvcmovie\obj\Debug\net8.0\Mvcmovie.MvcApplicationPartsAssemblyInfo.cs
+D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\X.PagedList.dll
+D:\Net_Core_API\Project\Mvcmovie\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
