@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using MvcMovie.Models.Entities;
 
-namespace Mvcmovie.Areas.Identity.Pages.Account
+namespace MvcMovie.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel

@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "D:\\Net_Core_API\\Project\\Mvcmovie\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Mvcmovie.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Mvcmovie.bundle.scp.css"
+      "Id": "D:\\Net_Core_API\\Project\\Mvcmovie\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MvcMovie.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MvcMovie.bundle.scp.css"
     },
     {
       "Id": "D:\\Net_Core_API\\Project\\Mvcmovie\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Mvcmovie.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MvcMovie.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Mvcmovie.props",
-      "PackagePath": "build\\Mvcmovie.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MvcMovie.props",
+      "PackagePath": "build\\MvcMovie.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Mvcmovie.props",
-      "PackagePath": "buildMultiTargeting\\Mvcmovie.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MvcMovie.props",
+      "PackagePath": "buildMultiTargeting\\MvcMovie.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Mvcmovie.props",
-      "PackagePath": "buildTransitive\\Mvcmovie.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MvcMovie.props",
+      "PackagePath": "buildTransitive\\MvcMovie.props"
     }
   ],
   "ElementsToRemove": []

@@ -9217,9 +9217,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Net_Core_API\\Project\\Mvcmovie\\Mvcmovie.csproj",
-      "projectName": "Mvcmovie",
-      "projectPath": "D:\\Net_Core_API\\Project\\Mvcmovie\\Mvcmovie.csproj",
+      "projectUniqueName": "D:\\Net_Core_API\\Project\\Mvcmovie\\MvcMovie.csproj",
+      "projectName": "MvcMovie",
+      "projectPath": "D:\\Net_Core_API\\Project\\Mvcmovie\\MvcMovie.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
       "outputPath": "D:\\Net_Core_API\\Project\\Mvcmovie\\obj\\",
       "projectStyle": "PackageReference",
@@ -9326,7 +9326,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Mvcmovie depends on Microsoft.VisualStudio.Web.CodeGeneration.Design (>= 8.0.8) but Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.8 was not found. An approximate best match of Microsoft.VisualStudio.Web.CodeGeneration.Design 9.0.0 was resolved.",
+      "message": "MvcMovie depends on Microsoft.VisualStudio.Web.CodeGeneration.Design (>= 8.0.8) but Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.8 was not found. An approximate best match of Microsoft.VisualStudio.Web.CodeGeneration.Design 9.0.0 was resolved.",
       "libraryId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
       "targetGraphs": [
         "net8.0"

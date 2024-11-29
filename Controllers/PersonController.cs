@@ -8,7 +8,7 @@ using OfficeOpenXml;
 using X.PagedList;
 using X.PagedList.Extensions;
 
-namespace Mvcmovie.Controllers
+namespace MvcMovie.Controllers
 {
     public class PersonController : Controller
     {

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
 
-namespace Mvcmovie.Controllers
+namespace MvcMovie.Controllers
 {
     public class EmployeeController : Controller
     {

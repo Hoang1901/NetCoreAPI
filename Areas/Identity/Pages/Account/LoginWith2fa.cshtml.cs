@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using MvcMovie.Models.Entities;
 
-namespace Mvcmovie.Areas.Identity.Pages.Account
+namespace MvcMovie.Areas.Identity.Pages.Account
 {
     public class LoginWith2faModel : PageModel
     {

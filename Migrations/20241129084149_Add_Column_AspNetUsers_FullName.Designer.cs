@@ -8,7 +8,7 @@ using MvcMovie.Data;
 
 #nullable disable
 
-namespace Mvcmovie.Migrations
+namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20241129084149_Add_Column_AspNetUsers_FullName")]
