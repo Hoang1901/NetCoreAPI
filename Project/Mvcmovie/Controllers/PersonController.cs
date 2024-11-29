@@ -5,7 +5,6 @@ using MvcMovie.Data;
 using MvcMovie.Models;
 using MvcMovie.Models.Process;
 using OfficeOpenXml;
-using X.PagedList;
 using X.PagedList.Extensions;
 
 namespace MvcMovie.Controllers
