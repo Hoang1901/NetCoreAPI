@@ -20,23 +20,13 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index()
         {
-            var hoten = from m in _context.Employee select m;
-            if (!string.IsNullOrEmpty(id))
-                {
-                    hoten = hoten.Where(s => s.HoTen.Contains(id));
-                }
-            return View(await hoten.ToListAsync());
-        }
-        [HttpPost]
-        public string Index(string id, bool notUsed)
-        {
-            return "From [HttpPost]Index: filter on " + id;
+            return View(await _context.Employee.ToListAsync());
         }
 
         // GET: Employee/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -44,7 +34,7 @@ namespace MvcMovie.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonID == id);
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
                 return NotFound();
@@ -64,7 +54,7 @@ namespace MvcMovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,company,PersonID,HoTen,QueQuan")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeId,FirstName,LastName,Address,DateOfBirth,Position,Email,HireDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +66,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -96,9 +86,9 @@ namespace MvcMovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,company,PersonID,HoTen,QueQuan")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,FirstName,LastName,Address,DateOfBirth,Position,Email,HireDate")] Employee employee)
         {
-            if (id != employee.PersonID)
+            if (id != employee.EmployeeId)
             {
                 return NotFound();
             }
@@ -112,7 +102,7 @@ namespace MvcMovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.PersonID))
+                    if (!EmployeeExists(employee.EmployeeId))
                     {
                         return NotFound();
                     }
@@ -127,7 +117,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -135,7 +125,7 @@ namespace MvcMovie.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonID == id);
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
                 return NotFound();
@@ -147,7 +137,7 @@ namespace MvcMovie.Controllers
         // POST: Employee/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var employee = await _context.Employee.FindAsync(id);
             if (employee != null)
@@ -159,9 +149,9 @@ namespace MvcMovie.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(string id)
+        private bool EmployeeExists(int id)
         {
-            return _context.Employee.Any(e => e.PersonID == id);
+            return _context.Employee.Any(e => e.EmployeeId == id);
         }
     }
 }
