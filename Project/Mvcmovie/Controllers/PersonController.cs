@@ -1,8 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
 using MvcMovie.Models.Process;
+using OfficeOpenXml;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace Mvcmovie.Controllers
 {
@@ -17,22 +21,21 @@ namespace Mvcmovie.Controllers
         }
 
         // GET: Person
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, int? page, int? PageSize)
         {
-            if (_context.Model == null)
+            ViewBag.PageSize = new List<SelectListItem>()
             {
-                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
-            }
-
-            var person = from p in _context.Person
-                        select p;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                person = person.Where(s => s.HoTen.ToUpper().Contains(searchString.ToUpper()));
-            }
-
-            return View(await person.ToListAsync());
+                new SelectListItem() { Value = "3", Text = "3" },
+                new SelectListItem() { Value = "5", Text = "5" },
+                new SelectListItem() { Value = "10", Text = "10" },
+                new SelectListItem() { Value = "15", Text = "15",},
+                new SelectListItem() { Value = "25", Text = "25",},
+                new SelectListItem() { Value = "50", Text = "50",}
+            };
+            int pagesize = (PageSize ?? 3);
+            ViewBag.psize = pagesize;
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, pagesize);
+            return View(model);
         }
 
         // GET: Person/Details/5
@@ -209,6 +212,27 @@ namespace Mvcmovie.Controllers
                 }
             }
             return View();
+        }
+
+        public IActionResult Download()
+        {
+            //Name the file when downloading
+            var fileName = "YourFileName" + ".xlsx";
+            using(ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                //Add some text to cell A1
+                worksheet.Cells["A1"].Value = "PersonID";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+                //get all Person
+                var personList = _context.Person.ToList();
+                //fill data to worksheet
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                //download file
+                return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }
