@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Net_Core_API\\Project\\Mvcmovie\\MvcMovie.csproj": {}
+    "D:\\Net_Core_API\\Project\\MvcMovie\\MvcMovie.csproj": {}
   },
   "projects": {
-    "D:\\Net_Core_API\\Project\\Mvcmovie\\MvcMovie.csproj": {
+    "D:\\Net_Core_API\\Project\\MvcMovie\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Net_Core_API\\Project\\Mvcmovie\\MvcMovie.csproj",
+        "projectUniqueName": "D:\\Net_Core_API\\Project\\MvcMovie\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "D:\\Net_Core_API\\Project\\Mvcmovie\\MvcMovie.csproj",
+        "projectPath": "D:\\Net_Core_API\\Project\\MvcMovie\\MvcMovie.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\Net_Core_API\\Project\\Mvcmovie\\obj\\",
+        "outputPath": "D:\\Net_Core_API\\Project\\MvcMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config"
