@@ -7,7 +7,7 @@ using MvcMovie.Data;
 
 #nullable disable
 
-namespace Mvcmovie.Migrations
+namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot

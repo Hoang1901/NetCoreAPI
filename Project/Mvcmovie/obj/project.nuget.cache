@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pyTiC0zxvQE=",
+  "dgSpecHash": "p1K9ZYEJyPc=",
   "success": true,
-  "projectFilePath": "D:\\Net_Core_API\\Project\\Mvcmovie\\Mvcmovie.csproj",
+  "projectFilePath": "D:\\Net_Core_API\\Project\\MvcMovie\\MvcMovie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nguye\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
@@ -197,7 +197,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Mvcmovie depends on Microsoft.VisualStudio.Web.CodeGeneration.Design (>= 8.0.8) but Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.8 was not found. An approximate best match of Microsoft.VisualStudio.Web.CodeGeneration.Design 9.0.0 was resolved.",
+      "message": "MvcMovie depends on Microsoft.VisualStudio.Web.CodeGeneration.Design (>= 8.0.8) but Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.8 was not found. An approximate best match of Microsoft.VisualStudio.Web.CodeGeneration.Design 9.0.0 was resolved.",
       "libraryId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
       "targetGraphs": [
         "net8.0"

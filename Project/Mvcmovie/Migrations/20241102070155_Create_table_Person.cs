@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Mvcmovie.Migrations
+namespace MvcMovie.Migrations
 {
     /// <inheritdoc />
     public partial class Create_table_Person : Migration

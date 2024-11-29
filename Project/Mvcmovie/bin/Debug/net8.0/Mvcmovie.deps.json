@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "Mvcmovie/1.0.0": {
+      "MvcMovie/1.0.0": {
         "dependencies": {
           "EPPlus": "7.4.2",
           "MailKit": "4.8.0",
@@ -20,7 +20,7 @@
           "X.PagedList.Mvc.Core": "10.5.7"
         },
         "runtime": {
-          "Mvcmovie.dll": {}
+          "MvcMovie.dll": {}
         }
       },
       "Azure.Core/1.35.0": {
@@ -2413,7 +2413,7 @@
     }
   },
   "libraries": {
-    "Mvcmovie/1.0.0": {
+    "MvcMovie/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

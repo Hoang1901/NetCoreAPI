@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using MvcMovie.Models.Entities;
 
-namespace Mvcmovie.Areas.Identity.Pages.Account.Manage
+namespace MvcMovie.Areas.Identity.Pages.Account.Manage
 {
     public class EnableAuthenticatorModel : PageModel
     {

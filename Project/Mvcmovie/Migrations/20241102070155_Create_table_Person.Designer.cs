@@ -7,7 +7,7 @@ using MvcMovie.Data;
 
 #nullable disable
 
-namespace Mvcmovie.Migrations
+namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20241102070155_Create_table_Person")]

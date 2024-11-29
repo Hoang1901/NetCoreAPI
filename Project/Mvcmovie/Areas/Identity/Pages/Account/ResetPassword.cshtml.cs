@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using MvcMovie.Models.Entities;
 
-namespace Mvcmovie.Areas.Identity.Pages.Account
+namespace MvcMovie.Areas.Identity.Pages.Account
 {
     public class ResetPasswordModel : PageModel
     {
